@@ -21,6 +21,21 @@ __
 # Algorithm and models
 
 ## Autoencoder
+Autoencoderis a special architecture of artificial neural networks that provides unsupervised learning using the backpropagation method
+In our case we feed results obtained on the coarse mesh as an input to the autoencoder and results of on the fine mesh as the output. This way we try to build operator which maps results from the coarse mesh to the fine one.
+
+Structure of our encoder is the following: as an input and output we provide RGB pictures, which are represented as width*height*3 neurons. The whole net is a simple MLP (width*height*3 -- 1536 -- 153 -- 70 -- 153 -- 1536 --width*height*3) structure with LeakyReLU activations and Dropouts on each layer. 100 epochs was used for training. Adam optimizer and learning rate scheduler was implemented. Training was based on MSE loss: 
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\begin{equation}
+MSE loss =\sqrt{\sum_{i=1}^{n}y_{true}-y_{pred}}
+\end{equation}
+
+![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/1_44eDEuZBEsmG_TCAKRI3Kw%402x.png)
+
+
+## DCGAN
+
 
 
 
