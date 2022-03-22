@@ -1,9 +1,12 @@
 
-<p align="center">
-  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/photo_2022-03-22_22-28-12.jpg?raw=true" alt="Sublime's custom image"/>
+
+<p float="center">
+  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/photo_2022-03-22_22-28-12.jpg?raw=true" alt="Sublime's custom image" width=300/>
+  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/Screenshot_10.png" alt="Sublime's custom image" width=300 /> 
+  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/photo_2022-03-22_22-24-39.jpg" alt="Sublime's custom image" width=300 />
 </p>
 
-# Reconstruction of fine grid CFD solution from a coarse grid one
+# Reconstruction of fine grid computational fluid dynamic (CFD) solution from a coarse grid one
 ____
 Certain problems, for instance, timestepping of the Navier-Stokes equation, can be very computationally expensive to solve with desirable accuracy. Normally this is ameliorated by using e.g. multigrid methods, which are, however, unusable with commercial solvers. Another alternative is to employ the method of Galerkin and, upon isolating the modes of some snapshot matrix of fine-grid solutions, compute further on coarse grid with projection onto said modes, providing enhancement of approximation and not impairing usability with commercial solvers.  For this task two methods are salient: SINDy (sparse identification of nonlinear dynamics), which is in essence regression on functional basis, and employment of generative networks and autoencoders
 
