@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/photo_2022-03-22_22-28-12.jpg?raw=true" alt="Sublime's custom image"/>
+  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/photo_2022-03-22_22-28-12.jpg?raw=true" alt="Sublime's custom image"/>
 </p>
 
 # Reconstruction of fine grid CFD solution from a coarse grid one
@@ -25,7 +25,7 @@ In our case we feed results obtained on the coarse mesh as an input to the autoe
 Structure of our encoder is the following: as an input and output we provide RGB pictures, which are represented as width*height*3 neurons. The whole net is a simple MLP (width*height*3 -- 1536 -- 153 -- 70 -- 153 -- 1536 --width*height*3) structure with LeakyReLU activations and Dropouts on each layer. 100 epochs was used for training. Adam optimizer and learning rate scheduler was implemented. Training was based on MSE loss.
 
 
-![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/1_44eDEuZBEsmG_TCAKRI3Kw%402x.png)
+![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/1_44eDEuZBEsmG_TCAKRI3Kw%402x.png)
 
 Performance of Autoencoder
 
@@ -36,7 +36,7 @@ Generative networks existed before GANs but the “adversarial” part actually 
 To construct GAN from to construct fine grid from low resolution coarse grid we tried to implement U-net architecture for generator part and feed-forward convolution network (CNN) for discriminator part.
 
 <p align="center">
-  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/u-net_training_image_segmentation_models_in_pytorch_header.png?raw=true" alt="Sublime's custom image"/>
+  <img src="https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/u-net_training_image_segmentation_models_in_pytorch_header.png?raw=true" alt="Sublime's custom image"/>
 </p>
 
 
