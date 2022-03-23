@@ -76,7 +76,8 @@ Test | Prediction |
 
 
 To estimate results of our fine grid approximation we used the following metric:
-
+1-norm of the residual, scaled by the 1-norm of the vectorised fine-grid solution
+![image](https://user-images.githubusercontent.com/53058704/159635314-af8b7f61-36ed-40bc-a776-b8d570c39e9f.png)
 
 Algorithm | Cylindric dataset | Orszag-Tang dataset  | Kelvin–Helmholtz instability
 :---| :-----------------------:|-------------:|-------------:
@@ -86,5 +87,7 @@ NIRB-R | 0.0005 | 0.007|0.0001|
 DCGAN | 0.0442 | 0.0734| 0.1154
 Autoencoder | 0.047 | 0.073|  - |
 
+# Reproducibility
+PYNBs are run straightforwardly, once data is supplied. We do not link said data because it is excessively large and therefore has problems being transmitted. We do, however, supply the weights (prikrepi vesa). gen-4-anal.py is the file needed to perform NIRB and SINDy computations. It is uploaded in its NIRB configuration and needs to only be run (provided a great amount of RAM is present; the demands can exceed 30-40 GB). To change it into SINDy configuration, one needs to specify a function library, import STSL_SINDy from SINDy_func.py and run with desired parameters. Even greater demands of RAM are exercised; be warned that the solution is not computed quickly.
 
 
