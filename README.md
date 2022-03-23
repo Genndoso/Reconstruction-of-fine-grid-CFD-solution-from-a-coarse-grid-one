@@ -26,10 +26,10 @@ The problem of [Orszag and Tang](https://www.astro.princeton.edu/~jstone/Athena/
 
 # Algorithm and models
 ## NIRB
-The baseline algorithm hinges on the ideas of multigrid solution and Galerkin projection. More information about NIRB algorithm can be found [here](https://egrosjean.pages.math.cnrs.fr/media/PRESENTATION_GTT.pdf)
+The baseline algorithm hinges on the ideas of multigrid solution and Galerkin projection. It seeks the best linear approximation to the interpolation operator which sends the coarse-grid solution to the fine-grid one by means of making the residual orthogonal to all present fine-grid solutions. Naturally, this entails orthogonal projection. Further amelioration of condition number is performed by means of regularised least square problem from coarse-grid to fine-grid coefficients. More information about NIRB algorithm can be found [here](https://egrosjean.pages.math.cnrs.fr/media/PRESENTATION_GTT.pdf)
 
 ## SINDy
-SINDy can be understood as abusing the Galerkin projection by piling on an indeterminate number of very distinct functions and projecting onto them, with the difference that SINDy necessarily demands parsimony of representation. We approximate the dynamic system under study (which we here understand as evolution in the space of discretisation steps. More information about SINDy algorihm can be found [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2020.0279)
+SINDy can be understood as abusing the Galerkin projection by piling on an indeterminate number of very distinct functions and projecting onto them, with the difference that SINDy necessarily demands parsimony of representation. We approximate the dynamic system under study (which we here understand as evolution in the space of discretisation steps) as a superposition of some candidate functions from a given library. Determination of the coefficients is achieved by solving LSQP from candidate functions defined on the coarse-grid approximation to fine-grid solution with sequential thresholding. More information about SINDy algorihm can be found [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2020.0279)
 
 
 ## Autoencoder
