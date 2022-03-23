@@ -92,6 +92,6 @@ DCGAN | 0.0442 | 0.0734| 0.1154
 Autoencoder | 0.047 | 0.073|  - |
 
 # Reproducibility
-PYNBs are run straightforwardly, once data is supplied. We do not link said data because it is excessively large and therefore has problems being transmitted. We do, however, supply the weights (prikrepi vesa). gen-4-anal.py is the file needed to perform NIRB and SINDy computations. It is uploaded in its NIRB configuration and needs to only be run (provided a great amount of RAM is present; the demands can exceed 30-40 GB). To change it into SINDy configuration, one needs to specify a function library, import STSL_SINDy from SINDy_func.py and run with desired parameters. Even greater demands of RAM are exercised; be warned that the solution is not computed quickly.
+PYNBs are run straightforwardly, once data is supplied. We do not link said data because it is excessively large and therefore has problems being transmitted. We do, however, supply the weights. gen-4-anal.py is the file needed to perform NIRB and SINDy computations. It is uploaded in its NIRB configuration and needs to only be run (provided a great amount of RAM is present; the demands can exceed 30-40 GB). To change it into SINDy configuration, one needs to specify a function library, import STSL_SINDy from SINDy_func.py and run with desired parameters. Even greater demands of RAM are exercised; be warned that the solution is not computed quickly.
 
 
