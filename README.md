@@ -18,8 +18,19 @@ We have considered three problems which we will now state in the language of mag
 
 [Cylindric dataset](https://cgl.ethz.ch/research/visualization/data.php). Simulation of a viscous 2D flow around a cylinder. The fluid was injected to the left of a channel bounded by solid walls with a slip boundary condition. The simulation was done with Gerris flow solver and was resampled onto a regular grid. In the original simulation, the unstructured grid was adaptively discretized based on the vorticity. Over the course of the simulation, the characteristic von-Karman vortex street is forming. The image on the side shows a later time step, in which the street is fully formed. The vortices move with almost constant speed, except directly in the wake of the obstacle, where they accelerate.
 
+The problem of [Orszag and Tang](https://www.astro.princeton.edu/~jstone/Athena/tests/orszag-tang/pagesource.html) is one of the benchmarks in computational magnetohydrodynamics and corresponds to the onset of supersonic turbulence. Both lone shocks and shock-shock interactions are present in the system's evolution, thereby offering rather rich dynamics. The problem was solved on square domain and defined time interval [0; 0.8] with 400 elements in either direction for fine and 200 - for coarse mesh. The parameter was chosen to be the specific heat ratio, varied between known values. Boundary conditions were employed: periodic on both axes, initial conditions specified below.
+
+
+[Kelvin–Helmholtz instability in the presence of magnetic field](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/kelvin-helmholtz-instability) is also one of the known benchmarks in CMHD for reasons of the magnetic field’s smoothing effect on instabilities (Frank et al., 1996). As observed by Chandrasekhar, any magnetic field not perfectly normal to the direction of streaming has the effect equivalent to surface tension, which is known to inhibit instability development [chandrainstability]. Of especial interest is also the qualitative property of the problem that allows to judge the numerical diffusion effect of the scheme and discretisation, for it contributes significantly to suppression of instability. This therefore poses an additional problem of reconstructing possibly suppressed instability from smoothed coarse grid.
+
 
 # Algorithm and models
+## NIRB
+The baseline algorithm hinges on the ideas of multigrid solution and Galerkin projection. More information about NIRB algorithm can be found [here](https://egrosjean.pages.math.cnrs.fr/media/PRESENTATION_GTT.pdf)
+
+## SINDy
+SINDy can be understood as abusing the Galerkin projection by piling on an indeterminate number of very distinct functions and projecting onto them, with the difference that SINDy necessarily demands parsimony of representation. We approximate the dynamic system under study (which we here understand as evolution in the space of discretisation steps. More information about SINDy algorihm can be found [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2020.0279)
+
 
 ## Autoencoder
 Autoencoderis a special architecture of artificial neural networks that provides unsupervised learning using the backpropagation method
@@ -30,7 +41,7 @@ Structure of our encoder is the following: as an input and output we provide RGB
 
 ![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/1_44eDEuZBEsmG_TCAKRI3Kw%402x.png)
 
-Performance of Autoencoder
+
 
 
 ## DCGAN
@@ -44,17 +55,33 @@ To construct GAN from to construct fine grid from low resolution coarse grid we 
 
 
 
-Performance of DCGAN
+
 
 
 
 # Results
+
+Graphical representation of working machine learning algorithms
+Cylindrical dataset
+
+Test | Prediction |  
+:---| :--------------:|
+![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/Cylinder%20test%20.png)| ![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/cylinder%20predicted.png)|
+
+Orszag-Tang task
+Test | Prediction |  
+:---| :--------------:|
+![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/Encoder%20test.png)| ![alt text](https://github.com/Genndoso/Reconstruction-of-fine-grid-CFD-solution-from-a-coarse-grid-one/blob/main/Images/Encoder%20pred.png)|
+
+
+
 To estimate results of our fine grid approximation we used the following metric:
 
 
-Algorithm | Cylindric dataset | Orszag-Tang dataset 
-:---| :-----------------------:|-------------:
+Algorithm | Cylindric dataset | Orszag-Tang dataset  | Kelvin–Helmholtz instability
+:---| :-----------------------:|-------------:|-------------:
 SINDi | 11111 | 0000|
+NIRB | 11111 | 0000|
 DCGAN | 11111 | 0000|
 Autoencoder | 11111 | 0000|
 
