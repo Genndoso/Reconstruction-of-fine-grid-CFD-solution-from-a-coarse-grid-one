@@ -80,8 +80,11 @@ To estimate results of our fine grid approximation we used the following metric:
 
 Algorithm | Cylindric dataset | Orszag-Tang dataset  | Kelvin–Helmholtz instability
 :---| :-----------------------:|-------------:|-------------:
-SINDi | 11111 | 0000|
-NIRB | 11111 | 0000|
-DCGAN | 11111 | 0000|
-Autoencoder | 11111 | 0000|
+SINDy | 11111 | 0000| |
+NIRB | 0.178 | 0.262| 0.0005        |
+NIRB-R | 0.0005 | 0.007|0.0001|
+DCGAN | 0.0442 | 0.0734| 0.1154
+Autoencoder | 0.047 | 0.073|  - |
+
+
 
