@@ -10,7 +10,7 @@
 
 ___
 Link to the video presentation [link](https://drive.google.com/drive/u/0/folders/14lzT7lp0AfFgXUqJdzjRzkeAg0H2haLM)
-Link to the GAN model weigts [link](https://drive.google.com/drive/u/0/folders/1qyy0AmC5Lu3H5ZnV190d_e39Bqi6gV_j)
+Link to the GAN model weights [link](https://drive.google.com/drive/u/0/folders/1qyy0AmC5Lu3H5ZnV190d_e39Bqi6gV_j)
 ____
 Certain problems, for instance, timestepping of the Navier-Stokes equation, can be very computationally expensive to solve with desirable accuracy. Normally this is ameliorated by using e.g. multigrid methods, which are, however, unusable with commercial solvers. Another alternative is to employ the method of Galerkin and, upon isolating the modes of some snapshot matrix of fine-grid solutions, compute further on coarse grid with projection onto said modes, providing enhancement of approximation and not impairing usability with commercial solvers.  For this task two methods are salient: SINDy (sparse identification of nonlinear dynamics), which is in essence regression on functional basis, and employment of generative networks and autoencoders
 
